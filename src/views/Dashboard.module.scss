@@ -10,9 +10,8 @@
   z-index: -1;
   top: 0; 
   
-  
   &_box{
-    background-color: rgb(32, 72, 156);
+    background-color: rgb(31, 46, 78);
     width: 100%;
     padding: 20px;
     margin-top: 20px;
@@ -24,6 +23,22 @@
       width: 200px;
       border-radius: 20px;
       height: 400px;
+
+      &_button1{
+        background: #2755B7;
+        color: white;
+        border-radius: 80px 10px 80px 10px;
+        height: 40px;
+        width: 200px;
+        cursor: pointer;
+
+        &:active{
+          transform: translateY(4px);
+          background: #142a5a;
+        }
+
+
+      }
     }
   }
  
