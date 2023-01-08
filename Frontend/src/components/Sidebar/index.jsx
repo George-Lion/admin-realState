@@ -25,8 +25,8 @@ const Sidebar = () => {
       </svg>
       <div className={linksContainer}>
         {Links &&
-          Links.map(({ to, text, svg }) => (
-            <Item to={to} text={text} svg={svg} open={open} />
+          Links.map(({ to, text, svg, id }) => (
+            <Item key={id} to={to} text={text} svg={svg} open={open} />
           ))}
       </div>
     </div>

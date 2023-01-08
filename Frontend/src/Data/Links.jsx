@@ -1,5 +1,6 @@
 export const Links = [
   {
+    id: "1",
     to: "/dashboard",
     text: "Panel",
     svg: (
@@ -18,6 +19,7 @@ export const Links = [
     ),
   },
   {
+    id: "2",
     to: "/calendar",
     text: "Contenido",
     svg: (
@@ -36,6 +38,7 @@ export const Links = [
     ),
   },
   {
+    id: "3",
     to: "/clients",
     text: "Clientes",
     svg: (
@@ -54,6 +57,7 @@ export const Links = [
     ),
   },
   {
+    id: "4",
     to: "/estadisticas",
     text: "Estadísticas",
     svg: (
@@ -72,6 +76,7 @@ export const Links = [
     ),
   },
   {
+    id: "5",
     to: "/comentarios",
     text: "Comentarios",
     svg: (

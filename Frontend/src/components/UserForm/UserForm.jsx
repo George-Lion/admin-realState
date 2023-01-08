@@ -12,6 +12,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="text"
                 placeholder="Dirección de Vivienda"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -19,6 +20,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="text"
                 placeholder="Ciudad"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -26,6 +28,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="text"
                 placeholder="Tipo de vivienda"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -33,6 +36,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="text"
                 placeholder="Precio"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -46,6 +50,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="number"
                 placeholder="Habitaciones"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -53,6 +58,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="number"
                 placeholder="Baños"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -60,6 +66,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="number"
                 placeholder="Metros"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -67,6 +74,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="text"
                 placeholder="Año de Construcción"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -74,6 +82,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="text"
                 placeholder="Planta"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -81,6 +90,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="text"
                 placeholder="Descripción del inmueble"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -88,6 +98,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="text"
                 placeholder="Garaje"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -95,6 +106,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="text"
                 placeholder="Calefacción"
+                required
               />
             </div>
             <div className={styles.content_box_form_div}>
@@ -102,6 +114,7 @@ export const UserForm = () => {
                 className={styles.content_box_form_div_input}
                 type="text"
                 placeholder="Aire Acondicionado"
+                required
               />
               <input
                 className={styles.content_box_form_div_input}
