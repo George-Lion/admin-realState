@@ -1,0 +1,39 @@
+.client{
+  width: 190vh;
+  margin-left: 80px ;
+  color: black;
+  position: absolute;
+  z-index: -1;
+  top: 0; 
+
+  &_form{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(33, 34, 43);
+
+    &_fila{
+      margin-top: 10px;
+      color: white;
+
+      &_button{
+        cursor: pointer;
+        width: 100%;
+        height: 30px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 20px;
+        background-color: rgb(94, 94, 179);
+        color: white;
+        font-weight: 800;
+
+      }
+    }
+  }
+  }
+
+
+ 
