@@ -7,6 +7,7 @@ import State from "./views/State";
 import NewClient from "./views/NewClient";
 import "./App.scss";
 import Clients from "./views/Clients";
+import HouseList from "./components/HouseList/HouseList";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/clients" element={<Clients />} />
         <Route path="/client" element={<NewClient />} />
+        <Route path="/estate" element={<HouseList />} />
       </Routes>
     </div>
   );

@@ -9,29 +9,38 @@ const NewClient = () => {
 
   const [client, setClient] = useState({
     name: null,
-    lastName: null,
+    surName: null,
+    secondSurName: null,
+    landLine: null,
     phone: null,
     email: null,
     direction: null,
+    houseNumber: null,
   });
 
   const [redirect, setRedirect] = useState(false);
 
   //referencia de los datos del formulario:
   let nameRef = React.createRef();
-  let lastNameRef = React.createRef();
+  let surNameRef = React.createRef();
+  let secondSurNameRef = React.createRef();
+  let landLineRef = React.createRef();
   let phoneRef = React.createRef();
   let emailRef = React.createRef();
   let directionRef = React.createRef();
+  let houseNumberRef = React.createRef();
 
   //función que recoge la información mediante se escribe en el formulario:
   const changeState = () => {
     setClient({
       name: nameRef.current.value,
-      lastName: lastNameRef.current.value,
+      surName: surNameRef.current.value,
+      secondSurName: secondSurNameRef.current.value,
+      landLine: landLineRef.current.value,
       phone: phoneRef.current.value,
       email: emailRef.current.value,
       direction: directionRef.current.value,
+      houseNumber: houseNumberRef.current.value,
     });
   };
 
@@ -70,20 +79,44 @@ const NewClient = () => {
           </div>
           <div className={style.client_form_fila}>
             <div>
-              <label htmlFor="">Apellidos</label>
+              <label htmlFor="">1 Apellido</label>
             </div>
             <input
               type="text"
               name=""
               id="lastName"
-              ref={lastNameRef}
+              ref={surNameRef}
               onChange={changeState}
               required
             />
           </div>
           <div className={style.client_form_fila}>
             <div>
-              <label htmlFor="">Teléfono</label>
+              <label htmlFor="">2 Apellido</label>
+            </div>
+            <input
+              type="text"
+              name=""
+              id="lastName"
+              ref={secondSurNameRef}
+              onChange={changeState}
+            />
+          </div>
+          <div className={style.client_form_fila}>
+            <div>
+              <label htmlFor="">Número Fíjo</label>
+            </div>
+            <input
+              type="text"
+              name=""
+              id="phone"
+              ref={landLineRef}
+              onChange={changeState}
+            />
+          </div>
+          <div className={style.client_form_fila}>
+            <div>
+              <label htmlFor="">Número Móvil</label>
             </div>
             <input
               type="text"
@@ -109,13 +142,26 @@ const NewClient = () => {
           </div>
           <div className={style.client_form_fila}>
             <div>
-              <label htmlFor="">Dirección de domicilio</label>
+              <label htmlFor="">Nombre de vía</label>
             </div>
             <input
               type="text"
               name=""
               id="direction"
               ref={directionRef}
+              onChange={changeState}
+              required
+            />
+          </div>
+          <div className={style.client_form_fila}>
+            <div>
+              <label htmlFor="">Num. vía</label>
+            </div>
+            <input
+              type="text"
+              name=""
+              id="direction"
+              ref={houseNumberRef}
               onChange={changeState}
               required
             />
