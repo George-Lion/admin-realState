@@ -3,6 +3,7 @@ import ClientList from "../components/ClientList/ClientList";
 import axios from "axios";
 import Global from "../Global";
 import styles from "./Clients.module.scss";
+import { FaSearch } from "react-icons/fa";
 
 const Clients = () => {
   const [clients, setClients] = useState([]);
@@ -15,6 +16,28 @@ const Clients = () => {
   useEffect(() => {
     getClients(currentPage, searchTerm);
   }, [clients.length]);
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    /*  if (!searchTerm || searchTerm.trim() === "") {
+      // Muestra un mensaje de error o una alerta al usuario si el término de búsqueda es vacío o nulo
+      return alert("Por favor ingresa un término de búsqueda válido");
+    } */
+    getClients(1, searchTerm); // Realiza una nueva búsqueda empezando desde la página 1
+  };
+
+  const handleSearchInput = (event) => {
+    const regex = /^[a-zA-Z0-9@.]*$/;
+    if (!regex.test(event.target.value)) {
+      event.preventDefault();
+      return;
+    }
+
+    setSearchTerm(event.target.value);
+    if (event.key === "Enter") {
+      handleSearch(event);
+    }
+  };
 
   const getClients = (currentPage, searchTerm) => {
     axios
@@ -47,53 +70,52 @@ const Clients = () => {
   };
 
   // Maneja el evento onClick del botón de búsqueda
-  const handleSearch = (event) => {
-    event.preventDefault();
-    /*  if (!searchTerm || searchTerm.trim() === "") {
-      // Muestra un mensaje de error o una alerta al usuario si el término de búsqueda es vacío o nulo
-      return alert("Por favor ingresa un término de búsqueda válido");
-    } */
-    getClients(1, searchTerm); // Realiza una nueva búsqueda empezando desde la página 1
-  };
-
-  const handleSearchInput = (event) => {
-    setSearchTerm(event.target.value);
-    if (event.key === "Enter") {
-      handleSearch(event);
-    }
-  };
 
   return (
     <div className={styles.content}>
       <div className={styles.content_list}>
-        <div className="">
+        <h1>CLIENTES</h1>
+        <div className={styles.content_list__search}>
+          <button onClick={handleSearch}>
+            <FaSearch style={{ color: "white" }} />
+          </button>
           <input
+            className={styles.content_list__search__searchInput}
             type="text"
             value={searchTerm}
             onChange={handleSearchInput}
             onKeyDown={handleSearchInput}
+            placeholder="Buscar"
           />
-          <button onClick={handleSearch}>Search</button>
         </div>
-        <h1>CLIENTES</h1>
         <div className={styles.content_list_person}>
-          <div className={styles.content_list_person_box1}>Nombre</div>
-          <div className={styles.content_list_person_box1}>1 Apellido</div>
-          <div className={styles.content_list_person_box1}>2 Apellido</div>
-          <div className={styles.content_list_person_box1}>Fijo</div>
-          <div className={styles.content_list_person_box1}>Móvil</div>
-          <div className={styles.content_list_person_box1}>
-            Correo Electrónico
-          </div>
-          <div className={styles.content_list_person_box1}>Nombre vía</div>
-          <div className={styles.content_list_person_box1}>Num.vía</div>
-          <div className={styles.content_list_person_box1}>
-            Fecha de creación
-          </div>
+          <table className={styles.contentTable}>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>1 Apellido</th>
+                <th>2 Apellido</th>
+                <th>Fíjo</th>
+                <th>Móvil</th>
+                <th>Email</th>
+                <th>Direction</th>
+                <th>Num.vía</th>
+                <th>Fecha de creación</th>
+              </tr>
+            </thead>
+            {clients != "" ? (
+              clients.map((client, index) => {
+                return (
+                  <ClientList key={index} id={index} clientData={client} />
+                );
+              })
+            ) : (
+              <div className={styles.add}>
+                <h4> No se han encontrado datos similares </h4>
+              </div>
+            )}
+          </table>
         </div>
-        {clients.map((client, index) => {
-          return <ClientList key={index} id={index} clientData={client} />;
-        })}
       </div>
 
       <div className={styles.content_list_person_box3}>

@@ -87,7 +87,6 @@ const NewClient = () => {
               id="lastName"
               ref={surNameRef}
               onChange={changeState}
-              required
             />
           </div>
           <div className={style.client_form_fila}>
@@ -107,7 +106,7 @@ const NewClient = () => {
               <label htmlFor="">Número Fíjo</label>
             </div>
             <input
-              type="text"
+              type="number"
               name=""
               id="phone"
               ref={landLineRef}
@@ -119,7 +118,7 @@ const NewClient = () => {
               <label htmlFor="">Número Móvil</label>
             </div>
             <input
-              type="text"
+              type="number"
               name=""
               id="phone"
               ref={phoneRef}
@@ -158,7 +157,7 @@ const NewClient = () => {
               <label htmlFor="">Num. vía</label>
             </div>
             <input
-              type="text"
+              type="number"
               name=""
               id="direction"
               ref={houseNumberRef}

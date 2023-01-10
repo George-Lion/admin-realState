@@ -18,8 +18,23 @@ const ClientList = ({ id, clientData, delClient }) => {
     return date.substring(8, 10) + date.substring(4, 8) + date.substring(0, 4);
   };
   return (
-    <div className={styles.person}>
-      <div className={styles.person__row}>
+    /*     <div className={styles.person}> */
+    <>
+      <tbody>
+        <tr>
+          <td>{name}</td>
+          <td>{surName}</td>
+          <td>{secondSurName}</td>
+          <td>{landLine}</td>
+          <td>{phone}</td>
+          <td>{email}</td>
+          <td>{direction}</td>
+          <td>{houseNumber}</td>
+          <td>{formatDate(date)}</td>
+        </tr>
+      </tbody>
+
+      {/* <div className={styles.person__row}>
         <div className={styles.person__box}>
           <p>{name}</p>
         </div>
@@ -48,7 +63,8 @@ const ClientList = ({ id, clientData, delClient }) => {
           <p>{formatDate(date)}</p>
         </div>
       </div>
-    </div>
+    </div> */}
+    </>
   );
 };
 

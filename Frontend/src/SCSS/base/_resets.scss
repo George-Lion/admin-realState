@@ -17,3 +17,10 @@ button {
   background: none;
   font-family: var(--font-poppins);
 }
+
+//Deshabilita las flechas de los inputs type number:
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

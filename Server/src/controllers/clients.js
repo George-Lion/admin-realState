@@ -40,31 +40,41 @@ var controller = {
     });
   },
 
-  //Método para listar los clientes con paginación:
+  //Método para traer una lista de clientes con paginación:
 
   getClients: async (req, res) => {
 
     const { page = 1, search } = req.query;
 
-    // Crea una expresión regular a partir de os datos del search para hacer una búsqueda en cualquier parte del nombre o dato del cliente
+    let filter = {};
+    if (search) {
+      const searchRegex = new RegExp(search, 'i');
+      if (isNaN(search)) {
 
-    const searchRegex = new RegExp(search, 'i');
-    console.log(searchRegex.exec('ale'));
+        // crea un filtro por string:
+        filter = {
+          $or: [
+            { name: searchRegex },
+            { surName: searchRegex },
+            { secondSurName: searchRegex },
+            { email: searchRegex },
+            { direction: searchRegex }
 
-    // Crea el filtro para la búsqueda utilizando la expresión regular creada anteriormente
-    const filter = search ? {
+          ]
+        }
+      } else {
 
-      $or: [
-        { name: searchRegex },
-        { surName: searchRegex },
-        { secondSurName: searchRegex },
-        { email: searchRegex },
-        /*  { landLine: { $eq: search } },
-         { phone: { $eq: search } }, */
-        { direction: searchRegex },
-        /* { houseNumber: { $eq: search } }, */
-      ]
-    } : {};
+        //crea un filtro por number:
+        filter = {
+          $or: [
+            { landLine: { $eq: Number(search) } },
+            { phone: { $eq: Number(search) } },
+            { houseNumber: { $eq: Number(search) } },
+            { date: { $eq: Number(search) } }
+          ]
+        }
+      }
+    }
 
     const options = {
       limit: 5,
@@ -85,6 +95,7 @@ var controller = {
 
     try {
       const clients = await Client.paginate(filter, options);
+
       if (!clients) {
         res.status(404).send({ status: 'error', message: 'No hay clientes para mostrar' });
       }

@@ -7,14 +7,14 @@ var Schema = mongoose.Schema;
 
 var ClientSchema = new Schema({
 
-  name: String,
-  surName: String,
-  secondSurName: String,
-  landLine: { type: Number, integer: true },
-  phone: { type: Number, integer: true },
-  email: String,
-  direction: String,
-  houseNumber: { type: Number, integer: true },
+  name: { type: String, required: true },
+  surName: { type: String, default: "" },
+  secondSurName: { type: String, default: "" },
+  landLine: { type: Number, required: true },
+  phone: { type: Number, required: true },
+  email: { type: String, unique: true, required: true },
+  direction: { type: String, default: "" },
+  houseNumber: { type: Number, default: null },
   date: { type: Date, default: Date.now },
 
 });
