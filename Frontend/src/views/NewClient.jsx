@@ -11,11 +11,12 @@ const NewClient = () => {
     name: null,
     surName: null,
     secondSurName: null,
+    direction: null,
+    houseNumber: null,
+    province: null,
     landLine: null,
     phone: null,
     email: null,
-    direction: null,
-    houseNumber: null,
   });
 
   const [redirect, setRedirect] = useState(false);
@@ -24,11 +25,13 @@ const NewClient = () => {
   let nameRef = React.createRef();
   let surNameRef = React.createRef();
   let secondSurNameRef = React.createRef();
+
+  let directionRef = React.createRef();
+  let houseNumberRef = React.createRef();
+  let provinceRef = React.createRef();
   let landLineRef = React.createRef();
   let phoneRef = React.createRef();
   let emailRef = React.createRef();
-  let directionRef = React.createRef();
-  let houseNumberRef = React.createRef();
 
   //función que recoge la información mediante se escribe en el formulario:
   const changeState = () => {
@@ -36,11 +39,12 @@ const NewClient = () => {
       name: nameRef.current.value,
       surName: surNameRef.current.value,
       secondSurName: secondSurNameRef.current.value,
+      direction: directionRef.current.value,
+      houseNumber: houseNumberRef.current.value,
+      province: provinceRef.current.value,
       landLine: landLineRef.current.value,
       phone: phoneRef.current.value,
       email: emailRef.current.value,
-      direction: directionRef.current.value,
-      houseNumber: houseNumberRef.current.value,
     });
   };
 
@@ -161,6 +165,19 @@ const NewClient = () => {
               name=""
               id="direction"
               ref={houseNumberRef}
+              onChange={changeState}
+              required
+            />
+          </div>
+          <div className={style.client_form_fila}>
+            <div>
+              <label htmlFor="">Provincia</label>
+            </div>
+            <input
+              type="text"
+              name=""
+              id="direction"
+              ref={provinceRef}
               onChange={changeState}
               required
             />

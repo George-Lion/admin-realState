@@ -2,10 +2,10 @@
 
 var Client = require('../models/clients')
 
-//Creamos un objeto para disponer de todos los metodos de ruta que vamos a definir
+//Objeto que dispone de todos los metodos de ruta definidos:
 var controller = {
 
-  //Método para guardar un cliente
+  //Método POST para guardar un cliente
   save: (req, res) => {
     var params = req.body;
 
@@ -16,10 +16,11 @@ var controller = {
     client.surName = params.surName;
     client.secondSurName = params.secondSurName;
     client.landLine = params.landLine;
-    client.phone = params.phone;
-    client.email = params.email;
     client.direction = params.direction;
     client.houseNumber = params.houseNumber;
+    client.province = params.province;
+    client.phone = params.phone;
+    client.email = params.email;
 
     //Guardamos el artículo 
 
@@ -58,8 +59,8 @@ var controller = {
             { surName: searchRegex },
             { secondSurName: searchRegex },
             { email: searchRegex },
-            { direction: searchRegex }
-
+            { direction: searchRegex },
+            { province: searchRegex },
           ]
         }
       } else {
@@ -105,7 +106,7 @@ var controller = {
     }
   },
 
-  //Método para eliminar un cliente:
+  //Método DELETE para eliminar un cliente:
   deleteClient: (req, res) => {
     //Recoger el id a través de la url:
     var clientId = req.params.id;

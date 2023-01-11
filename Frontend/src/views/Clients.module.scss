@@ -111,3 +111,14 @@
   border-bottom: 1px solid #dddddd
 
 }
+
+.filter{
+  display: flex;
+  width:1000px;
+  margin: auto;
+
+  &__inputFil{
+    width: 100px;
+    padding-left: 10px;
+  }
+}

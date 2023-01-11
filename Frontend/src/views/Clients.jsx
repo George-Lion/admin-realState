@@ -11,6 +11,14 @@ const Clients = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
 
+  //filtros
+
+  const [nameFilter, setNameFilter] = useState("");
+  const [surname1Filter, setSurname1Filter] = useState("");
+  const [surname2Filter, setSurname2Filter] = useState("");
+  const [numberFilter, setNumberFilter] = useState("");
+  const [addressFilter, setAddressFilter] = useState("");
+
   const url = Global.url;
 
   useEffect(() => {
@@ -88,18 +96,115 @@ const Clients = () => {
             placeholder="Buscar"
           />
         </div>
+        {/*  componente filter */}
+        <div className={styles.filter}>
+          <div>
+            <input
+              className={styles.filter__inputFil}
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearchInput}
+              placeholder="Nombre"
+            />
+          </div>
+          <div>
+            <input
+              className={styles.filter__inputFil}
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearchInput}
+              placeholder="1er Apellido"
+            />
+          </div>
+          <div>
+            <input
+              className={styles.filter__inputFil}
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearchInput}
+              placeholder="2 Apellido"
+            />
+          </div>
+          <div>
+            <input
+              className={styles.filter__inputFil}
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearchInput}
+              placeholder="Nombre Vía"
+            />
+          </div>
+          <div>
+            <input
+              className={styles.filter__inputFil}
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearchInput}
+              placeholder="Num. Vía"
+            />
+          </div>
+          <div>
+            <input
+              className={styles.filter__inputFil}
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearchInput}
+              placeholder="Provincia"
+            />
+          </div>
+          <div>
+            <input
+              className={styles.filter__inputFil}
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearchInput}
+              placeholder="Fíjo"
+            />
+          </div>
+          <div>
+            <input
+              className={styles.filter__inputFil}
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearchInput}
+              placeholder="Móvil"
+            />
+          </div>
+          <div>
+            <input
+              className={styles.filter__inputFil}
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearchInput}
+              placeholder="Email"
+            />
+          </div>
+          <div>
+            <button>BUSCAR</button>
+          </div>
+        </div>
         <div className={styles.content_list_person}>
           <table className={styles.contentTable}>
             <thead>
               <tr>
                 <th>Nombre</th>
-                <th>1 Apellido</th>
-                <th>2 Apellido</th>
+                <th>1er Apellido</th>
+                <th>2º Apellido</th>
+                <th>Nombre Vía</th>
+                <th>Num.vía</th>
+                <th>Provincia</th>
                 <th>Fíjo</th>
                 <th>Móvil</th>
                 <th>Email</th>
-                <th>Direction</th>
-                <th>Num.vía</th>
                 <th>Fecha de creación</th>
               </tr>
             </thead>
