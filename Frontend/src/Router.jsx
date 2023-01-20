@@ -8,6 +8,7 @@ import NewClient from "./views/NewClient";
 import "./App.scss";
 import Clients from "./views/Clients";
 import HouseList from "./components/HouseList/HouseList";
+import { OneClient } from "./views/OneClient";
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path="/clients" element={<Clients />} />
         <Route path="/client" element={<NewClient />} />
         <Route path="/estate" element={<HouseList />} />
+        <Route path="/client/:id" element={<OneClient />} />
       </Routes>
     </div>
   );

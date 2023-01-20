@@ -15,10 +15,11 @@ var controller = {
     client.name = params.name;
     client.surName = params.surName;
     client.secondSurName = params.secondSurName;
-    client.landLine = params.landLine;
+    client.typeOfRoad = params.typeOfRoad;
     client.direction = params.direction;
     client.houseNumber = params.houseNumber;
     client.province = params.province;
+    client.landLine = params.landLine;
     client.phone = params.phone;
     client.email = params.email;
 
@@ -41,6 +42,32 @@ var controller = {
     });
   },
 
+  //Método para actualizar clientes:
+
+  update: (req, res) => {
+    var clientId = req.params.id;
+    var update = req.body;
+
+    Client.findOneAndUpdate({ _id: clientId }, update, { new: true }, (err, clientUpdated) => {
+      if (err) {
+        return res.status(500).send({
+          status: 'error',
+          message: 'Error al actualizar el cliente'
+        });
+      }
+      if (!clientUpdated) {
+        return res.status(404).send({
+          status: 'error',
+          message: 'No se ha encontrado el cliente'
+        });
+      }
+      return res.status(200).send({
+        status: 'success',
+        client: clientUpdated
+      });
+    });
+  },
+
   //Método para traer una lista de clientes con paginación:
 
   getClients: async (req, res) => {
@@ -59,6 +86,7 @@ var controller = {
             { surName: searchRegex },
             { secondSurName: searchRegex },
             { email: searchRegex },
+            { typeOfRoad: searchRegex },
             { direction: searchRegex },
             { province: searchRegex },
           ]

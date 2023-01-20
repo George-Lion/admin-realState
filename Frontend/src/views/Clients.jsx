@@ -199,6 +199,7 @@ const Clients = () => {
                 <th>Nombre</th>
                 <th>1er Apellido</th>
                 <th>2º Apellido</th>
+                <th>Tipo de vía</th>
                 <th>Nombre Vía</th>
                 <th>Num.vía</th>
                 <th>Provincia</th>
@@ -208,17 +209,13 @@ const Clients = () => {
                 <th>Fecha de creación</th>
               </tr>
             </thead>
-            {clients != "" ? (
-              clients.map((client, index) => {
-                return (
-                  <ClientList key={index} id={index} clientData={client} />
-                );
-              })
-            ) : (
-              <div className={styles.add}>
-                <h4> No se han encontrado datos similares </h4>
-              </div>
-            )}
+            {clients != ""
+              ? clients.map((client, index) => {
+                  return (
+                    <ClientList key={index} id={index} clientData={client} />
+                  );
+                })
+              : ""}
           </table>
         </div>
       </div>
