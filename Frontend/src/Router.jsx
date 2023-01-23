@@ -9,6 +9,7 @@ import "./App.scss";
 import Clients from "./views/Clients";
 import HouseList from "./components/HouseList/HouseList";
 import { OneClient } from "./views/OneClient";
+import NewHouse from "./views/NewHouse";
 
 const Router = () => {
   return (
@@ -20,7 +21,8 @@ const Router = () => {
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/clients" element={<Clients />} />
         <Route path="/client" element={<NewClient />} />
-        <Route path="/estate" element={<HouseList />} />
+        <Route path="/state" element={<HouseList />} />
+        <Route path="/createHouse" element={<NewHouse />} />
         <Route path="/client/:id" element={<OneClient />} />
       </Routes>
     </div>

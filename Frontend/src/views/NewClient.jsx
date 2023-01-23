@@ -15,6 +15,7 @@ const NewClient = () => {
     direction: null,
     houseNumber: null,
     province: null,
+    postal: null,
     landLine: null,
     phone: null,
     email: null,
@@ -31,6 +32,7 @@ const NewClient = () => {
   let directionRef = React.createRef();
   let houseNumberRef = React.createRef();
   let provinceRef = React.createRef();
+  let postalRef = React.createRef();
   let landLineRef = React.createRef();
   let phoneRef = React.createRef();
   let emailRef = React.createRef();
@@ -45,6 +47,7 @@ const NewClient = () => {
       direction: directionRef.current.value,
       houseNumber: houseNumberRef.current.value,
       province: provinceRef.current.value,
+      postal: postalRef.current.value,
       landLine: landLineRef.current.value,
       phone: phoneRef.current.value,
       email: emailRef.current.value,
@@ -73,143 +76,188 @@ const NewClient = () => {
 
   return (
     <div className={style.client}>
-      <h1>Introduzca los datos del cliente</h1>
+      <div>
+        <h1>Nuevo cliente</h1>
+      </div>
+      <br />
       <div className={style.client_form}>
         <form onSubmit={sendData}>
-          <div className={style.client_form_fila}>
-            <div>
-              <label htmlFor="name">Nombre</label>
+          <div className={style.client_form__fila}>
+            <div className={style.client_form__fila__divName}>
+              <div>
+                <label htmlFor="name">Nombre*</label>
+              </div>
+              <input
+                type="text"
+                name=""
+                id="name"
+                title="Introduzca nombre del cliente"
+                className={style.client_form__fila__divName__inputName}
+                ref={nameRef}
+                onChange={changeState}
+                required
+              />
             </div>
-            <input
-              type="text"
-              name=""
-              id="name"
-              ref={nameRef}
-              onChange={changeState}
-              required
-            />
           </div>
-          <div className={style.client_form_fila}>
-            <div>
-              <label htmlFor="lastName">1er Apellido</label>
+          <div className={style.client_form__fila}>
+            <div className={style.client_form__fila__lastName}>
+              <div className={style.client_form__fila__lastName_divLast}>
+                <label htmlFor="lastName">1er Apellido</label>
+              </div>
+              <input
+                type="text"
+                name=""
+                title="Introduzca primer apellido del cliente"
+                id="lastName"
+                className={style.client_form__fila__lastName__inputLast1}
+                ref={surNameRef}
+                onChange={changeState}
+              />
             </div>
-            <input
-              type="text"
-              name=""
-              id="lastName"
-              ref={surNameRef}
-              onChange={changeState}
-            />
-          </div>
-          <div className={style.client_form_fila}>
-            <div>
-              <label htmlFor="lastName2">2º Apellido</label>
+            <div className={style.client_form__fila__lastName}>
+              <div className={style.client_form__fila__lastName_divLast}>
+                <label htmlFor="lastName2">2º Apellido</label>
+              </div>
+              <input
+                type="text"
+                name=""
+                title="Introduzca segundo apellido del cliente"
+                id="lastName2"
+                className={style.client_form__fila__lastName__inputLast2}
+                ref={secondSurNameRef}
+                onChange={changeState}
+              />
             </div>
-            <input
-              type="text"
-              name=""
-              id="lastName2"
-              ref={secondSurNameRef}
-              onChange={changeState}
-            />
           </div>
-          <div className={style.client_form_fila}>
-            <div>
-              <label htmlFor="typeOfRoad">Tipo de vía</label>
+          <br />
+          <div className={style.client_form__fila}>
+            <div className={style.client_form__fila__divRoad}>
+              <div>
+                <label htmlFor="typeOfRoad">Tipo de vía</label>
+              </div>
+              <select
+                name="select"
+                id="typeOfRoad"
+                className={style.client_form__fila__divRoad__inputTypeRoad}
+                value={selectedRoad}
+                ref={typeOfRoadRef}
+                onChange={(e) => {
+                  setSelectedRoad(e.target.value);
+                  changeState(e);
+                }}
+              >
+                <option value="Avenida">Avenida</option>
+                <option value="Calle">Calle</option>
+                <option value="Camino">Camino</option>
+              </select>
             </div>
-            <select
-              name="select"
-              id="typeOfRoad"
-              value={selectedRoad}
-              ref={typeOfRoadRef}
-              onChange={(e) => {
-                setSelectedRoad(e.target.value);
-                changeState(e);
-              }}
-            >
-              <option value="Avenida">Avenida</option>
-              <option value="Calle">Calle</option>
-              <option value="Camino">Camino</option>
-            </select>
-          </div>
-          <div className={style.client_form_fila}>
-            <div>
-              <label htmlFor="direction">Nombre de vía</label>
+
+            <div className={style.client_form__fila__divRoad}>
+              <div>
+                <label htmlFor="direction">Nombre de vía</label>
+              </div>
+              <input
+                type="text"
+                name=""
+                id="direction"
+                className={style.client_form__fila__divRoad__inputRoad}
+                ref={directionRef}
+                onChange={changeState}
+              />
             </div>
-            <input
-              type="text"
-              name=""
-              id="direction"
-              ref={directionRef}
-              onChange={changeState}
-            />
           </div>
-          <div className={style.client_form_fila}>
-            <div>
-              <label htmlFor="directionNumber">Num. vía</label>
+          <div className={style.client_form__fila}>
+            <div className={style.client_form__fila__divNumberRoad}>
+              <div>
+                <label htmlFor="directionNumber">Num. vía</label>
+              </div>
+              <input
+                type="number"
+                name=""
+                id="directionNumber"
+                className={style.client_form__fila__divNumberRoad__inputNumRoad}
+                ref={houseNumberRef}
+                onChange={changeState}
+              />
             </div>
-            <input
-              type="number"
-              name=""
-              id="directionNumber"
-              ref={houseNumberRef}
-              onChange={changeState}
-            />
-          </div>
-          <div className={style.client_form_fila}>
-            <div>
-              <label htmlFor="province">Provincia</label>
+            <div className={style.client_form__fila__divNumberRoad}>
+              <div>
+                <label htmlFor="postal">Código postal</label>
+              </div>
+              <input
+                type="number"
+                name=""
+                id="postal"
+                className={style.client_form__fila__divNumberRoad__inputNumRoad}
+                ref={postalRef}
+                onChange={changeState}
+              />
             </div>
-            <input
-              type="text"
-              name=""
-              id="province"
-              ref={provinceRef}
-              onChange={changeState}
-            />
-          </div>
-          <div className={style.client_form_fila}>
-            <div>
-              <label htmlFor="landLine">Número Fíjo</label>
+            <div className={style.client_form__fila__divNumberRoad}>
+              <div>
+                <label htmlFor="province">Provincia*</label>
+              </div>
+              <input
+                type="text"
+                name=""
+                id="province"
+                className={style.client_form__fila__divNumberRoad__inputNumRoad}
+                ref={provinceRef}
+                onChange={changeState}
+                required
+              />
             </div>
-            <input
-              type="number"
-              name=""
-              id="landLine"
-              ref={landLineRef}
-              onChange={changeState}
-              required
-            />
           </div>
-          <div className={style.client_form_fila}>
-            <div>
-              <label htmlFor="phone">Número Móvil</label>
+          <br />
+          <div className={style.client_form__fila}>
+            <div className={style.client_form__fila__divContact}>
+              <div>
+                <label htmlFor="landLine">Número Fíjo</label>
+              </div>
+              <input
+                type="number"
+                name=""
+                id="landLine"
+                className={style.client_form__fila__divContact__numberInput}
+                ref={landLineRef}
+                onChange={changeState}
+              />
             </div>
-            <input
-              type="number"
-              name=""
-              id="phone"
-              ref={phoneRef}
-              onChange={changeState}
-              required
-            />
-          </div>
-          <div className={style.client_form_fila}>
-            <div>
-              <label htmlFor="email">Correo Electronico</label>
+            <div className={style.client_form__fila__divContact}>
+              <div>
+                <label htmlFor="phone">Número Móvil*</label>
+              </div>
+              <input
+                type="number"
+                name=""
+                id="phone"
+                className={style.client_form__fila__divContact__phoneInput}
+                ref={phoneRef}
+                onChange={changeState}
+                required
+              />
             </div>
-            <input
-              type="text"
-              name=""
-              id="email"
-              ref={emailRef}
-              onChange={changeState}
-              required
-            />
           </div>
+          <div className={style.client_form__fila}>
+            <div className={style.client_form__fila__divEmail}>
+              <div>
+                <label htmlFor="email">Correo Electrónico*</label>
+              </div>
+              <input
+                type="text"
+                name=""
+                id="email"
+                className={style.client_form__fila__divEmail__inputEmail}
+                ref={emailRef}
+                onChange={changeState}
+                required
+              />
+            </div>
+          </div>
+
           <div>
             <input
-              className={style.client_form_fila_button}
+              className={style.client_form__fila_button}
               type="submit"
               value="Crear"
               id="create"

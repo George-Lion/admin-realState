@@ -13,7 +13,7 @@ export const Dashboard = () => {
                 Nuevo cliente
               </button>
             </Link>
-            <Link to={"/state"}>
+            <Link to={"/createHouse"}>
               <button className={styles.content_box_area1_button2}>
                 Crear inmueble
               </button>

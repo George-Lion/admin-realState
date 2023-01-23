@@ -203,6 +203,7 @@ const Clients = () => {
                 <th>Nombre Vía</th>
                 <th>Num.vía</th>
                 <th>Provincia</th>
+                <th>Código Postal</th>
                 <th>Fíjo</th>
                 <th>Móvil</th>
                 <th>Email</th>

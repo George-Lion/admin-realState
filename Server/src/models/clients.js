@@ -14,6 +14,7 @@ var ClientSchema = new Schema({
   direction: { type: String, default: "" },
   houseNumber: { type: Number, default: null },
   province: { type: String, default: "" },
+  postal: { type: Number, default: null },
   landLine: { type: Number, required: true },
   phone: { type: Number, required: true },
   email: { type: String, unique: true, required: true },

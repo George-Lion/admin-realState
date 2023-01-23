@@ -18,6 +18,7 @@ var controller = {
     client.typeOfRoad = params.typeOfRoad;
     client.direction = params.direction;
     client.houseNumber = params.houseNumber;
+    client.postal = params.postal;
     client.province = params.province;
     client.landLine = params.landLine;
     client.phone = params.phone;
@@ -99,6 +100,7 @@ var controller = {
             { landLine: { $eq: Number(search) } },
             { phone: { $eq: Number(search) } },
             { houseNumber: { $eq: Number(search) } },
+            { postal: { $eq: Number(search) } },
             { date: { $eq: Number(search) } }
           ]
         }

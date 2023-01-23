@@ -10,6 +10,7 @@ const ClientList = ({ id, clientData, delClient }) => {
     direction,
     houseNumber,
     province,
+    postal,
     date,
     landLine,
     phone,
@@ -29,6 +30,7 @@ const ClientList = ({ id, clientData, delClient }) => {
         <td>{direction}</td>
         <td>{houseNumber}</td>
         <td>{province}</td>
+        <td>{postal}</td>
         <td>{landLine}</td>
         <td>{phone}</td>
         <td>{email}</td>

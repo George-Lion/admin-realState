@@ -1,0 +1,70 @@
+.content{
+  width: 100%;
+  padding-top: 100px;
+
+  &__form{
+    width: 900px;
+    background-color: red;
+    margin: auto;
+    border-radius: 10px;
+
+    &__box{
+      width: 900px;
+      margin: auto;
+      padding-top: 20px;
+      
+    &__roadDiv{
+      width: 800px;
+      display: flex;
+      justify-content: space-around;
+      margin: auto;
+      color: white;
+
+      &__roadTypeInput{
+        width: 180px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+      }
+
+      &__roadInput{
+        width: 600px;
+        border-radius: 5px;
+        border: none;
+        padding: 6px;
+      }
+    }
+
+    &__roadData{
+      width: 800px;
+      display: flex;
+      margin: auto;
+      color: white;
+      justify-content: space-around;
+
+      &__numberInput{
+        width: 250px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+      }
+
+      &__codeInput{
+        width: 250px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+      }
+
+      &__typeInput{
+        width: 250px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+      }
+    }
+  }
+  }
+  }
+
+  

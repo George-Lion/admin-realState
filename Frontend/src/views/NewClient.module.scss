@@ -9,27 +9,136 @@
   &_form{
     display: flex;
     justify-content: center;
-    width: 300px;
-    margin-top: 20px;
+    width: 800px;
+    margin:auto;
     padding: 20px;
     border-radius: 20px;
     background-color: rgb(33, 34, 43);
 
-    &_fila{
+    &__fila{
       margin-top: 10px;
       color: white;
+      display: flex;
+      width: 410px;
+
+        &__divName{
+      
+          &__inputName{
+            width: 410px;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            padding-left: 8px;
+          }
+        }
+      &__lastName{
+        
+        width: 400px;
+
+        &__divLast{
+          
+        }
+
+        &__inputLast1{
+          width: 200px;
+          height: 30px;
+          border-radius: 10px;
+          border: none;
+          padding-left: 8px;
+          margin-right: 5px;
+        }
+
+        &__inputLast2{
+          width: 200px;
+          height: 30px;
+          border-radius: 10px;
+          border: none;
+          padding-left: 8px;
+          margin-left: 5px;
+        }
+      }
+
+      &__divRoad{
+        width: 410px;
+
+        &__inputTypeRoad{
+          width: 100px;
+          border-radius: 10px;
+          height: 30px;
+          padding-left: 5px;
+          border: none;
+
+        }
+
+        &__inputRoad{
+          width: 300px;
+          border-radius: 10px;
+          height: 30px;
+          padding-left: 8px;
+          border: none;
+
+        }
+      }
+
+      &__divNumberRoad{
+
+        &__inputNumRoad{
+          width: 133px;
+          border-radius: 10px;
+          height: 30px;
+          padding-left: 5px;
+          border: none;
+
+        }
+
+      }
+
+      &__divContact{
+
+        &__numberInput{
+          width: 200px;
+          border-radius: 10px;
+          height: 30px;
+          padding-left: 5px;
+          border: none;
+          margin-right: 5px;
+        }
+
+        &__phoneInput{
+          width: 200px;
+          border-radius: 10px;
+          height: 30px;
+          padding-left: 5px;
+          border: none;
+          margin-left: 5px;
+        }
+      }
+      &__divEmail{
+        &__inputEmail{
+          width: 410px;
+          border-radius: 10px;
+          height: 30px;
+          padding-left: 5px;
+          border: none;
+          margin-right: 5px;
+        }
+      }
+      &__input{
+        border-radius: 10px;
+        border: none;
+        padding-left: 8px;
+      }
 
       &_button{
         cursor: pointer;
         width: 100%;
-        height: 30px;
+        height: 40px;
         margin-top: 20px;
         border: none;
-        border-radius: 20px;
+        border-radius: 5px;
         background-color: rgb(94, 94, 179);
         color: white;
         font-weight: 800;
-
       }
     }
   }
