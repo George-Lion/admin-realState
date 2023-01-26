@@ -58,7 +58,7 @@ export const Links = [
   },
   {
     id: "4",
-    to: "/estate",
+    to: "/state",
     text: "Inmuebles",
     svg: (
       <svg

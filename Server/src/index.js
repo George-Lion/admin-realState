@@ -14,6 +14,7 @@ const url = 'mongodb://0.0.0.0:27017/api_rest_reactclient';
 mongoose.Promise = global.Promise;
 
 var client_routes = require('./routes/clients');
+var house_routes = require('./routes/houses');
 
 mongoose.set('strictQuery', true);
 
@@ -33,6 +34,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/api', client_routes);
+app.use('/api', house_routes);
 
 mongoose.connect(url, { useNewUrlParser: true }).then(() => {
   console.log('Conexión a la bdd realizada con éxito!!!');

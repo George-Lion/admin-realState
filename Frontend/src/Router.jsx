@@ -7,9 +7,10 @@ import State from "./views/State";
 import NewClient from "./views/NewClient";
 import "./App.scss";
 import Clients from "./views/Clients";
-import HouseList from "./components/HouseList/HouseList";
 import { OneClient } from "./views/OneClient";
 import NewHouse from "./views/NewHouse";
+import Houses from "./views/Houses";
+import HouseDetail from "./views/HouseDetail";
 
 const Router = () => {
   return (
@@ -21,8 +22,9 @@ const Router = () => {
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/clients" element={<Clients />} />
         <Route path="/client" element={<NewClient />} />
-        <Route path="/state" element={<HouseList />} />
+        <Route path="/state" element={<Houses />} />
         <Route path="/createHouse" element={<NewHouse />} />
+        <Route path="/houses/:id" element={<HouseDetail />} />
         <Route path="/client/:id" element={<OneClient />} />
       </Routes>
     </div>
