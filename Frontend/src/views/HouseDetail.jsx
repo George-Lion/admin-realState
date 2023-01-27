@@ -6,8 +6,9 @@ import axios from "axios";
 import { GiHouse, GiFamilyHouse } from "react-icons/gi";
 import { MdOutlineApartment } from "react-icons/md";
 import { FaBed } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const HouseDetail = () => {
+const HouseDetail = ({ house }) => {
   const url = Global.url;
   const [house, setHouse] = useState({});
   const { id } = useParams();
@@ -104,6 +105,9 @@ const HouseDetail = () => {
             </div>
           </div>
         </div>
+        <Link to={`/houses/edit/${house.id}`}>
+          <div className={style.content__editButton}>Editar Inmueble</div>
+        </Link>
       </div>
     </div>
   );

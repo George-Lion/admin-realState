@@ -60,4 +60,13 @@
       }
     }
   }
+
+  &__editButton{
+    width: 200px;
+    margin: auto;
+    background-color: red;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 }

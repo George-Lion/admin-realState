@@ -11,6 +11,7 @@ import { OneClient } from "./views/OneClient";
 import NewHouse from "./views/NewHouse";
 import Houses from "./views/Houses";
 import HouseDetail from "./views/HouseDetail";
+import EditHouse from "./views/EditHouse";
 
 const Router = () => {
   return (
@@ -26,6 +27,7 @@ const Router = () => {
         <Route path="/createHouse" element={<NewHouse />} />
         <Route path="/houses/:id" element={<HouseDetail />} />
         <Route path="/client/:id" element={<OneClient />} />
+        <Route path="/houses/edit/:id" element={<EditHouse />} />
       </Routes>
     </div>
   );

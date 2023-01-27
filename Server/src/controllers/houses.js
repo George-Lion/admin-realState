@@ -45,7 +45,7 @@ var controller = {
 
   //Método para actualizar clientes:
 
-  update: (req, res) => {
+  editHouse: (req, res) => {
     var houseId = req.params.id;
     var update = req.body;
 
