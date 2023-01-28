@@ -16,7 +16,7 @@ router.get('/houses', Houses.getHouses);
 router.get('/houses/:id', Houses.getHouse);
 
 //ruta para editar un inmueble por ID:
-router.get('/house/edit/:id', Houses.editHouse);
+router.put('/house/edit/:id', Houses.editHouse);
 
 //ruta para eliminar un inmueble:
 router.delete('/delete/:id', Houses.deleteHouse);

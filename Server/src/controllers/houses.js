@@ -69,6 +69,8 @@ var controller = {
     });
   },
 
+
+
   //Método para traer un inmueble:
   getHouse: (req, res) => {
     var houseId = req.params.id;
